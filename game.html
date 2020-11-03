@@ -7,12 +7,13 @@
       img { position:absolute; image-rendering:pixelated; }
       div { position:absolute; }
       #paddle { top:100px; left:100px; width:150px; height:40px; border-radius:5px; }
+      #paddle-container { }
       .ball { top:100px; left:300px; height:49px; width:49px; border-radius:50%; }
     </style>
   </head>
   <body>
   
-    <div><img id="paddle" src="pong-paddle.png"></img></div>
+    <div id="paddle-container"><img id="paddle" src="pong-paddle.png"></img></div>
     <div class="ball"><img src="pong-ball.png"></img></div>
   
     <script>
@@ -20,7 +21,7 @@
       
       function idKey(e) {
         if (e.code == "ArrowRight"){
-          transform:rotate(2deg);
+          paddle-container.style.transform = "rotate(2deg)";
           console.log("thing");
         }
         else {
@@ -31,4 +32,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.10-->
+<!--Version 0.11-->
