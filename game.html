@@ -17,7 +17,7 @@
     <div class="ball"><img src="pong-ball.png"></img></div>
   
     <script>
-      var paddleContainer = document.getElementById("paddle-container");
+      var paddle = document.getElementById("paddle");
       var paddleDeg = 0;
       var localDegree = paddleDeg + "deg";
       
@@ -26,7 +26,7 @@
         if (e.code == "ArrowRight"){
           paddleDeg = Number(paddleDeg + 2);
           localDegree = paddleDeg + "deg";
-          paddleContainer.style.transform = "rotate(localDegree)";         
+          paddle.style.transform = "rotate(localDegree)";         
           console.log("thing");
         }
         else {
@@ -37,4 +37,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.17-->
+<!--Version 0.18-->
