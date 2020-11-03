@@ -16,8 +16,18 @@
     <div class="ball"><img src="pong-ball.png"></img></div>
   
     <script>
-    
+      document.addEventListener('keydown', idKey);
+      
+      function idKey(e) {
+        if (e.code == "ArrowRight"){
+          console.log("thing");
+        }
+        else {
+          console.log("wrong key");
+        }
+      }
+      
     </script>
   </body>
 </html>
-<!--Version 0.8-->
+<!--Version 0.9-->
