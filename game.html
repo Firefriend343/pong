@@ -17,11 +17,12 @@
     <div class="ball"><img src="pong-ball.png"></img></div>
   
     <script>
-      document.addEventListener('keydown', idKey);
+      var paddleContainer = document.getElementById("paddle-container");
       
+      document.addEventListener('keydown', idKey);   
       function idKey(e) {
         if (e.code == "ArrowRight"){
-          paddle-container.style.transform = "rotate(2deg)";
+          paddleContainer.style.transform = "rotate(2deg)";
           console.log("thing");
         }
         else {
@@ -32,4 +33,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.11-->
+<!--Version 0.12-->
