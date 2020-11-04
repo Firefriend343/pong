@@ -29,7 +29,7 @@
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
         if (e.code == "ArrowRight"){
-          paddleDeg = Number(paddleDeg + 2);
+          paddleDeg = Number(paddleDeg + 4);
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("thing");
