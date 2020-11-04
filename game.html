@@ -28,12 +28,17 @@
       
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
-        if (e.code == "ArrowRight"){
-          paddleDeg = Number(paddleDeg + 4);
+        if (e.code == "ArrowRight") {
+          paddleDeg = Number(paddleDeg + 6);
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("thing");
         }
+        else if (e.code == "ArrowLeft") {
+          paddleDeg = Number(paddleDeg - 6);
+          localDegree = paddleDeg + "deg";
+          paddle.style.transform = "rotate(" + localDegree + ")";         
+          console.log("thing");
         else {
           console.log("wrong key");
         }
@@ -45,4 +50,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.24-->
+<!--Version 0.25-->
