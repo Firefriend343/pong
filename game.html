@@ -41,10 +41,10 @@
           console.log("turn-left");
         }
         else if (e.code == "ArrowUp") {
-          paddle.style.top = Number(paddle.style.top - 10) - "px";
+          paddle.style.top = Number(paddle.style.top - 10) + "px";
         }
         else if (e.code == "ArrowDown") {
-          paddle.style.top = Number(paddle.style.top - 10) + "px";
+          paddle.style.top = Number(paddle.style.top + 10) + "px";
         }
         else {
           console.log("wrong key");
