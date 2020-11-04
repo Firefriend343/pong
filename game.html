@@ -44,7 +44,7 @@
           paddle.style.top = Number(paddle.style.top - 10) + "px";
         }
         else if (e.code == "ArrowDown") {
-          paddle.style.top = Number(paddle.style.top + 10) + "px";
+          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) + 10) + "px";
         }
         else {
           console.log("wrong key");
