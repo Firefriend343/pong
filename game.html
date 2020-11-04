@@ -4,8 +4,8 @@
   
     <style>
       body { background:darkgray; }
-      img { position:absolute; image-rendering:pixelated; }
-      div { position:absolute; transform-origin: right right; }
+      img { position:absolute; image-rendering:pixelated; transform-origin: 50% 50%; }
+      div { position:absolute; }
       #paddle { top:100px; left:100px; width:150px; height:40px; border-radius:5px; }
       #paddle-container { }
       .ball { top:100px; left:300px; height:49px; width:49px; border-radius:50%; }
@@ -17,7 +17,7 @@
     <div class="ball"><img src="pong-ball.png"></img></div>
   
     <script>
-      var paddle = document.getElementById("paddle-container");
+      var paddle = document.getElementById("paddle");
       var paddleDeg = 0;
       var localDegree = paddleDeg + "deg";
       var startDifficulty = null;
@@ -45,4 +45,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.23-->
+<!--Version 0.24-->
