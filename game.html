@@ -20,6 +20,11 @@
       var paddle = document.getElementById("paddle-container");
       var paddleDeg = 0;
       var localDegree = paddleDeg + "deg";
+      var startDifficulty = null;
+      
+      function startDifficulty() {
+        startDifficulty = prompt("Select your number of difficulty(1-5).");
+      }
       
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
@@ -34,7 +39,10 @@
         }
       }
       
+      ///All opening functions
+      startDifficulty();
+      
     </script>
   </body>
 </html>
-<!--Version 0.19-->
+<!--Version 0.20-->
