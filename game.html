@@ -24,6 +24,8 @@
       
       function startingDifficulty() {
         startDifficulty = prompt("Select your number of difficulty(1-5).");
+        paddle.style.top = "100px";
+        paddle.style.left = "100px";
       }
       
       document.addEventListener('keydown', idKey);   
@@ -41,7 +43,7 @@
           console.log("turn-left");
         }
         else if (e.code == "ArrowUp") {
-          paddle.style.top = Number(paddle.style.top - 10) + "px";
+          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) - 10) + "px";
         }
         else if (e.code == "ArrowDown") {
           paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) + 10) + "px";
@@ -57,4 +59,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.26-->
+<!--Version 0.27-->
