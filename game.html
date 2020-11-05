@@ -52,11 +52,24 @@
           console.log("wrong key");
         }
       }
-     
+      
+      function gamePlay() {
+        setTimeout(function(){
+          gamePlay2();
+        }, Number(1000 * startDifficulty));
+      }
+      
+      function gamePlay2() {
+        setTimeout(function(){
+          gamePlay();
+        }, Number(1000 * startDifficulty));
+      }
+      
       ///All opening functions
       startingDifficulty();
+      gamePlay();
       
     </script>
   </body>
 </html>
-<!--Version 0.29-->
+<!--Version 0.30-->
