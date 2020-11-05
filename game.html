@@ -53,25 +53,33 @@
         }
       }
       
-      function gamePlay() {
+      function startGame() {
+        console.log("game begins");
+        ///3,2,1 thing
+        setTimeout(function(){
+          gamePlayLoop();
+        }, 5000);
+      }
+      
+      function gamePlayLoop() {
         console.log("loop1");
         setTimeout(function(){
-          gamePlay2();
+          gamePlayLoop2();
         }, Number(4000 / startDifficulty));
       }
       
-      function gamePlay2() {
+      function gamePlayLoop2() {
         console.log("loop2");
         setTimeout(function(){
-          gamePlay();
+          gamePlayLoop();
         }, Number(4000 / startDifficulty));
       }
       
       ///All opening functions
       startingDifficulty();
-      gamePlay();
+      startGame();
       
     </script>
   </body>
 </html>
-<!--Version 0.32-->
+<!--Version 0.33-->
