@@ -31,13 +31,13 @@
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
         if (e.code == "ArrowRight") {
-          paddleDeg = Number(paddleDeg + 12);
+          paddleDeg = Number(paddleDeg + 20);
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-right");
         }
         else if (e.code == "ArrowLeft") {
-          paddleDeg = Number(paddleDeg - 12);
+          paddleDeg = Number(paddleDeg - 20);
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-left");
