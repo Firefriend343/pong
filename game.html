@@ -72,6 +72,7 @@
         ///3,2,1 thing
         setTimeout(function(){
           gamePlayLoop();
+          moveBallLoop();
         }, 5000);
       }
       
@@ -104,7 +105,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty)) + "px";
         }
           setTimeout(function(){
           moveBallLoop2();
@@ -113,7 +114,7 @@
       
       function moveBallLoop2() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty)) + "px";
         }
           setTimeout(function(){
           moveBallLoop();
@@ -127,4 +128,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.58-->
+<!--Version 0.59-->
