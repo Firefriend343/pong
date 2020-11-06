@@ -90,7 +90,7 @@
         allBalls = $$('.ball');
         console.log("loop1");
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(5 * startingDifficulty)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(5 * startDifficulty)) + "px";
         }
         setTimeout(function(){
           gamePlayLoop2();
@@ -100,7 +100,7 @@
       function gamePlayLoop2() {
         console.log("loop2");
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(5 * startingDifficulty)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(5 * startDifficulty)) + "px";
         }
         gameLoop++;
         setTimeout(function(){
@@ -115,4 +115,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.51-->
+<!--Version 0.52-->
