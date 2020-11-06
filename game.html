@@ -11,13 +11,14 @@
       #paddle-container { }
       #ball-container { display:none; }
       #ball { top:100px; left:300px; height:49px; width:49px; border-radius:50%; }
+      .ball {  }
     </style>
   </head>
   <body>
   
     <div id="game-container">
       <div id="paddle-container"><img id="paddle" src="pong-paddle.png"></img></div>
-      <div id="ball-container"><img id="ball" src="pong-ball.png"></img></div>
+      <div id="ball-container"><img class="ball" id="ball" src="pong-ball.png"></img></div>
     </div>
   
     <script>
@@ -26,6 +27,7 @@
       var localDegree = paddleDeg + "deg";
       var startDifficulty = null;
       var gameLoop = 0;
+      var allBalls = $$('.ball');
       
       function $ (id) {
         return document.getElementById(id);
@@ -43,22 +45,22 @@
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
         if (e.code == "ArrowRight") {
-          paddleDeg = Number(paddleDeg + 20);
+          paddleDeg = Number(paddleDeg + 15);
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-right");
         }
         else if (e.code == "ArrowLeft") {
-          paddleDeg = Number(paddleDeg - 20);
+          paddleDeg = Number(paddleDeg - 15);
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-left");
         }
         else if (e.code == "ArrowUp") {
-          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) - 15) + "px";
+          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) - 15 + startDifficulty / 1.5) + "px";
         }
         else if (e.code == "ArrowDown") {
-          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) + 15) + "px";
+          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) + 15 + startDifficulty / 1.5) + "px";
         }
         else {
           console.log("wrong key");
@@ -79,23 +81,29 @@
         var newBall = ball.cloneNode(false);
         newBall.id = ball.id + "-" + Number(gameLoop + 1);
         newBall.style.display = "block";
-        var randomTop = Number(Math.floor(Math.random() * 650 + 100));
+        var randomTop = Number(Math.floor(Math.random() * 600 + 100));
         newBall.style.top = randomTop + "px";
         newBall.style.left = "500px";
         newBall.src = ball.src;
         container.appendChild(newBall);
         console.log("loop1");
+        for (const bEl of allBalls) {
+          bEl.style.left = bEl.style.left - 5;
+        }
         setTimeout(function(){
           gamePlayLoop2();
-        }, Number(4000 / startDifficulty));
+        }, Number(6000 / startDifficulty));
       }
       
       function gamePlayLoop2() {
         console.log("loop2");
+        for (const bEl of allBalls) {
+          bEl.style.left = bEl.style.left - 5;
+        }
         gameLoop++;
         setTimeout(function(){
           gamePlayLoop();
-        }, Number(4000 / startDifficulty));
+        }, Number(6000 / startDifficulty));
       }
       
       ///All opening functions
@@ -105,4 +113,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.40-->
+<!--Version 0.42-->
