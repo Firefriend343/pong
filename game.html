@@ -28,7 +28,7 @@
       var startDifficulty = null;
       var gameLoop = 0;
       var allBalls = $$('.ball');
-      var timeStepSec = null;
+      var timeStepSec = 1;
       
       function $ (id) {
         return document.getElementById(id);
@@ -41,7 +41,6 @@
         startDifficulty = Number(prompt("Select your number of difficulty(1-5)."));
         paddle.style.top = "100px";
         paddle.style.left = "100px";
-        timeStepSec = Number(1.3 - startDifficulty / 10);
       }
       
       document.addEventListener('keydown', idKey);   
@@ -88,7 +87,7 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "1250px";
         newBall.src = ball.src;
-        newBall.style.transition = Number(timeStepSec / 10) + "s linear";
+        newBall.style.transition = "0.1s linear";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop1");
@@ -110,7 +109,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 8 / 100)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 10 / 100)) + "px";
         }
           setTimeout(function(){
           moveBallLoop2();
@@ -119,7 +118,7 @@
       
       function moveBallLoop2() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 8 / 100)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 10 / 100)) + "px";
         }
           setTimeout(function(){
           moveBallLoop();
@@ -133,4 +132,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.81-->
+<!--Version 0.82-->
