@@ -108,7 +108,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 2)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 4)) + "px";
         }
           setTimeout(function(){
           moveBallLoop2();
@@ -117,7 +117,7 @@
       
       function moveBallLoop2() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 2)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 4)) + "px";
         }
           setTimeout(function(){
           moveBallLoop();
