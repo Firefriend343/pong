@@ -6,6 +6,7 @@
       body { background:darkgray; }
       img { position:absolute; image-rendering:pixelated; transform-origin: 50% 50%; }
       div { position:absolute; }
+      #game-container { }
       #paddle { top:100px; left:100px; width:150px; height:40px; border-radius:5px; transition:0.15s; }
       #paddle-container { }
       #ball-container { display:none; }
@@ -14,8 +15,10 @@
   </head>
   <body>
   
-    <div id="paddle-container"><img id="paddle" src="pong-paddle.png"></img></div>
-    <div id="ball-container"><img id="ball" src="pong-ball.png"></img></div>
+    <div id="game-container">
+      <div id="paddle-container"><img id="paddle" src="pong-paddle.png"></img></div>
+      <div id="ball-container"><img id="ball" src="pong-ball.png"></img></div>
+    </div>
   
     <script>
       var paddle = $("paddle");
@@ -72,6 +75,7 @@
       
       function gamePlayLoop() {
         var ball = $("ball");
+        var container = $("game-container");
         var newBall = ball.cloneNode(false);
         newBall.id = ball.id + "-" + Number(gameLoop + 1);
         newBall.style.display = "block";
@@ -101,4 +105,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.37-->
+<!--Version 0.38-->
