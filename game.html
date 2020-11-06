@@ -98,6 +98,9 @@
       function gamePlayLoop2() {
         console.log("loop2");
         gameLoop++;
+        if (Number(paddle.style.top.split("p")[0]) >= 650){
+          paddle.style.top = "650px";
+        }
         setTimeout(function(){
           gamePlayLoop();
         }, Number(900 + 5000 / startDifficulty));
@@ -128,4 +131,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.66-->
+<!--Version 0.67-->
