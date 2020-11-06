@@ -86,10 +86,10 @@
         newBall.style.left = "500px";
         newBall.src = ball.src;
         container.appendChild(newBall);
+        var allBalls = $$('.ball');
         console.log("loop1");
         for (const bEl of allBalls) {
           bEl.style.left = bEl.style.left - 5;
-          var allBalls = $$('.ball');
         }
         setTimeout(function(){
           gamePlayLoop2();
@@ -100,7 +100,6 @@
         console.log("loop2");
         for (const bEl of allBalls) {
           bEl.style.left = bEl.style.left - 5;
-          var allBalls = $$('.ball');
         }
         gameLoop++;
         setTimeout(function(){
