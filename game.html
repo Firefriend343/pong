@@ -88,7 +88,7 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "1250px";
         newBall.src = ball.src;
-        newBall.style.transition = Number(timeStepSec) + "s linear";
+        newBall.style.transition = Number(timeStepSec / 10) + "s linear";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop1");
@@ -133,4 +133,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.70-->
+<!--Version 0.71-->
