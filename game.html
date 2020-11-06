@@ -85,13 +85,10 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "1400px";
         newBall.src = ball.src;
-        newBall.style.transition = Number(0.9 + 5 / startDifficulty) + "s";
+        newBall.style.transition = "0.2s";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop1");
-        for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty)) + "px";
-        }
         setTimeout(function(){
           gamePlayLoop2();
         }, Number(900 + 5000 / startDifficulty));
@@ -99,13 +96,28 @@
       
       function gamePlayLoop2() {
         console.log("loop2");
-        for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty)) + "px";
-        }
         gameLoop++;
         setTimeout(function(){
           gamePlayLoop();
         }, Number(900 + 5000 / startDifficulty));
+      }
+      
+      function moveBallLoop() {
+        for (const bEl of allBalls) {
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty) + "px";
+        }
+          setTimeout(function(){
+          moveBallLoop2();
+        }, Number(200);
+      }
+      
+      function moveBallLoop2() {
+        for (const bEl of allBalls) {
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty) + "px";
+        }
+          setTimeout(function(){
+          moveBallLoop();
+        }, Number(200);
       }
       
       ///All opening functions
@@ -115,4 +127,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.57-->
+<!--Version 0.58-->
