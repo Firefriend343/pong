@@ -85,7 +85,7 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "500px";
         newBall.src = ball.src;
-        newBall.style.transition = Number(2 + 4 / startDifficulty) + "s";
+        newBall.style.transition = Number(0.9 + 5 / startDifficulty) + "s";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop1");
@@ -94,7 +94,7 @@
         }
         setTimeout(function(){
           gamePlayLoop2();
-        }, Number(2000 + 4000 / startDifficulty));
+        }, Number(900 + 5000 / startDifficulty));
       }
       
       function gamePlayLoop2() {
@@ -105,7 +105,7 @@
         gameLoop++;
         setTimeout(function(){
           gamePlayLoop();
-        }, Number(2000 + 4000 / startDifficulty));
+        }, Number(900 + 5000 / startDifficulty));
       }
       
       ///All opening functions
@@ -115,4 +115,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.55-->
+<!--Version 0.56-->
