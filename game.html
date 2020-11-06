@@ -57,7 +57,7 @@
           console.log("turn-left");
         }
         else if (e.code == "ArrowUp") {
-          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) - 15 + startDifficulty / 1.5) + "px";
+          paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) - 15 - startDifficulty / 1.5) + "px";
         }
         else if (e.code == "ArrowDown") {
           paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) + 15 + startDifficulty / 1.5) + "px";
