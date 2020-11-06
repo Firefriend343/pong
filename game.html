@@ -86,7 +86,7 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "1250px";
         newBall.src = ball.src;
-        newBall.style.transition = "0.8s";
+        newBall.style.transition = "1.2s";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop1");
@@ -109,7 +109,7 @@
         }
           setTimeout(function(){
           moveBallLoop2();
-        }, Number(200));
+        }, Number(1200));
       }
       
       function moveBallLoop2() {
@@ -118,7 +118,7 @@
         }
           setTimeout(function(){
           moveBallLoop();
-        }, Number(200));
+        }, Number(1200));
       }
       
       ///All opening functions
@@ -128,4 +128,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.62-->
+<!--Version 0.63-->
