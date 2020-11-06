@@ -85,11 +85,12 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "500px";
         newBall.src = ball.src;
+        newBall.style.transition = Number(6000 / startDifficulty) + "s";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop1");
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - 5) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - 12.5) + "px";
         }
         setTimeout(function(){
           gamePlayLoop2();
@@ -99,7 +100,7 @@
       function gamePlayLoop2() {
         console.log("loop2");
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - 5) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - 12.5) + "px";
         }
         gameLoop++;
         setTimeout(function(){
@@ -114,4 +115,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.45-->
+<!--Version 0.47-->
