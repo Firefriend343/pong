@@ -86,7 +86,7 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "1250px";
         newBall.src = ball.src;
-        newBall.style.transition = "1.2s linear";
+        newBall.style.transition = Number(startDifficulty / 5 + 12) + "s linear";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop1");
@@ -108,20 +108,20 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 4)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 8)) + "px";
         }
           setTimeout(function(){
           moveBallLoop2();
-        }, Number(1200));
+        }, Number(startDifficulty / 5 * 100) + 1200);
       }
       
       function moveBallLoop2() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 4)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(20 + startDifficulty * 8)) + "px";
         }
           setTimeout(function(){
           moveBallLoop();
-        }, Number(1200));
+        }, Number(startDifficulty / 5 * 100) + 1200);
       }
       
       ///All opening functions
@@ -131,4 +131,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.68-->
+<!--Version 0.69-->
