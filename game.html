@@ -89,6 +89,7 @@
         console.log("loop1");
         for (const bEl of allBalls) {
           bEl.style.left = bEl.style.left - 5;
+          var allBalls = $$('.ball');
         }
         setTimeout(function(){
           gamePlayLoop2();
@@ -99,6 +100,7 @@
         console.log("loop2");
         for (const bEl of allBalls) {
           bEl.style.left = bEl.style.left - 5;
+          var allBalls = $$('.ball');
         }
         gameLoop++;
         setTimeout(function(){
@@ -113,4 +115,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.42-->
+<!--Version 0.43-->
