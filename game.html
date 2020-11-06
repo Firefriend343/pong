@@ -41,7 +41,7 @@
         startDifficulty = prompt("Select your number of difficulty(1-5).");
         paddle.style.top = "100px";
         paddle.style.left = "100px";
-        timeStepSec = Number(startDifficulty / 5 + 6);
+        timeStepSec = Number(Number(startDifficulty / 5 + 6) / 100);
       }
       
       document.addEventListener('keydown', idKey);   
@@ -110,7 +110,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 8)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 8 / 100)) + "px";
         }
           setTimeout(function(){
           moveBallLoop2();
@@ -119,7 +119,7 @@
       
       function moveBallLoop2() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 8)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 8 / 100)) + "px";
         }
           setTimeout(function(){
           moveBallLoop();
@@ -133,4 +133,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.75-->
+<!--Version 0.76-->
