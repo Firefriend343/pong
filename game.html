@@ -6,7 +6,7 @@
       body { background:darkgray; }
       img { position:absolute; image-rendering:pixelated; transform-origin: 50% 50%; }
       div { position:absolute; }
-      #game-container { }
+      #game-container { top:0px; left:0px; width:1200px; height:800px; display:block; border:5px solid black;}
       #paddle { top:100px; left:100px; width:150px; height:40px; border-radius:5px; transition:0.12s; }
       #paddle-container { }
       #ball-container { display:none; }
@@ -126,13 +126,35 @@
         }
       }
       
+      function deleteLoop() {
+        var container = $("game-container");
+        for (const El of document.body.querySelectorAll('div')) {
+          if (El.id != "game-container") {
+            if (El.style.top < container.style.top - 50) {
+              container.removeChild(El);
+            }
+            if (El.style.left < container.style.left - 50) {
+              container.removeChild(El);
+            }
+            if (El.style.top > container.style.top + 800) {
+              container.removeChild(El);
+            }
+            if (El.style.left > container.style.left + 1200) {
+              container.removeChild(El);
+            }
+            else {
+              return;
+            }
+          }
+        }
+      }
       
       ///All opening functions
       startingDifficulty();
       startGame();
-      
+      setInterval(deleteLoop, 10);
       
     </script>
   </body>
 </html>
-<!--Version 0.103-->
+<!--Version 0.104-->
