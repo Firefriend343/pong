@@ -109,6 +109,7 @@
             ///bounce off-screen algorithm
             bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
             bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 20;
+            bEl.style.transition = "15s linear";
             ///end
             console.log("collision");
           }
@@ -124,4 +125,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.97-->
+<!--Version 0.98-->
