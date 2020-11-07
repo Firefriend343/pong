@@ -92,8 +92,11 @@
         allBalls = $$('.ball');
         console.log("loop");
         gameLoop++;
-        if (Number(paddle.style.top.split("p")[0]) >= 650){
+        if (Number(paddle.style.top.split("p")[0]) >= 650) {
           paddle.style.top = "650px";
+        }
+        if (Number(paddle.style.transform.split("(")[1].split("d")[0]) > 180) {
+          paddle.style.transform = "rotate(0deg)";
         }
       }
       
@@ -104,6 +107,9 @@
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 150
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
             ///bounce off-screen algorithm
+            bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
+            bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 20;
+            ///end
             console.log("collision");
           }
         }
@@ -118,4 +124,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.96-->
+<!--Version 0.97-->
