@@ -73,7 +73,7 @@
         ///3,2,1 thing
         setTimeout(function(){
           setInterval(gamePlayLoop, Number(400 + 2000 / startDifficulty));
-          setInterval(moveBallLoop, Number(10 - startDifficulty * 10));
+          setInterval(moveBallLoop, Number(100 - startDifficulty * 10));
         }, 5000);
       }
       
@@ -87,7 +87,7 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "1250px";
         newBall.src = ball.src;
-        newBall.style.transition = "0.1s linear";
+        newBall.style.transition = Number(0.1 - startDifficulty / 100) + "s linear";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         console.log("loop");
@@ -99,7 +99,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty / 10)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - 1 + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) 
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 150
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
@@ -118,4 +118,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.93-->
+<!--Version 0.94-->
