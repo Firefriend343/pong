@@ -71,6 +71,7 @@
       
       function startGame() {
         console.log("game begins");
+        setInterval(deleteLoop, 10);
         ///3,2,1 thing
         setTimeout(function(){
           setInterval(gamePlayLoop, Number(900 + 3500 / startDifficulty));
@@ -152,9 +153,8 @@
       ///All opening functions
       startingDifficulty();
       startGame();
-      setInterval(deleteLoop, 10);
       
     </script>
   </body>
 </html>
-<!--Version 0.104-->
+<!--Version 0.105-->
