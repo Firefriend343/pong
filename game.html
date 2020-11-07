@@ -110,8 +110,14 @@
       function moveBallLoop() {
         for (const bEl of allBalls) {
           bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 10 / 100)) + "px";
+          if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) 
+              && Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) + 150
+              && Number(bEl.style.left.split("p")[0] >= 100 && bEl.style.left.split("p")[0] <= 140) {
+            ///bounce off-screen algorithm
+            console.log("collision");
+          }
         }
-          setTimeout(function(){
+        setTimeout(function(){
           moveBallLoop2();
         }, Number(timeStepSec * 100));
       }
@@ -120,7 +126,7 @@
         for (const bEl of allBalls) {
           bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 10 / 100)) + "px";
         }
-          setTimeout(function(){
+        setTimeout(function(){
           moveBallLoop();
         }, Number(timeStepSec * 100));
       }
@@ -132,4 +138,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.83-->
+<!--Version 0.84-->
