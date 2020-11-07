@@ -109,7 +109,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 10 / 100)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty / 10)) + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) 
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 150
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
@@ -119,12 +119,12 @@
         }
         setTimeout(function(){
           moveBallLoop2();
-        }, Number(timeStepSec * 100));
+        }, Number(timeStepSec * 00));
       }
       
       function moveBallLoop2() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(40 + startDifficulty * 10 / 100)) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty / 10 )) + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) - 75 
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 75
               && Number(bEl.style.left.split("p")[0]) >= 60 && Number(bEl.style.left.split("p")[0]) <= 140) {
@@ -134,7 +134,7 @@
         }
         setTimeout(function(){
           moveBallLoop();
-        }, Number(timeStepSec * 100));
+        }, Number(timeStepSec * 00));
       }
       
       ///All opening functions
@@ -144,4 +144,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.88-->
+<!--Version 0.89-->
