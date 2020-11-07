@@ -99,7 +99,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - 1 + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - 1) + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) 
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 150
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
