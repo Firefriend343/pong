@@ -110,12 +110,7 @@
             else {
               bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
             }
-            if (Number(paddle.style.transform.split("(")[1].split("d")[0]) >= 91) {
-              bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 20;
-            }
-            else {
-              bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 40;
-            }
+            bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 20;
             bEl.style.transition = "12s linear";
             bEl.classList.add("collided");
             bEl.classList.remove("ball");
@@ -134,4 +129,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.100-->
+<!--Version 0.101-->
