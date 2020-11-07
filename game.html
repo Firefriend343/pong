@@ -97,6 +97,8 @@
         }
         if (Number(paddle.style.transform.split("(")[1].split("d")[0]) > 180) {
           paddle.style.transform = "rotate(0deg)";
+          paddleDeg = 0;
+          localDegree = Number(paddleDeg) + "deg";
         }
       }
       
@@ -109,7 +111,9 @@
             ///bounce off-screen algorithm
             bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
             bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 20;
-            bEl.style.transition = "15s linear";
+            bEl.style.transition = "12s linear";
+            bEl.classList.add("collided");
+            bEl.classList.remove("ball");
             ///end
             console.log("collision");
           }
@@ -125,4 +129,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.98-->
+<!--Version 0.99-->
