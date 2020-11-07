@@ -46,13 +46,13 @@
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
         if (e.code == "ArrowRight") {
-          paddleDeg = Number(paddleDeg + 15);
+          paddleDeg = Math.min(180, Number(paddleDeg + 15));
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-right");
         }
         else if (e.code == "ArrowLeft") {
-          paddleDeg = Number(paddleDeg - 15);
+          paddleDeg = Math.max(0, Number(paddleDeg - 15));
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-left");
@@ -95,11 +95,6 @@
         if (Number(paddle.style.top.split("p")[0]) >= 650) {
           paddle.style.top = "650px";
         }
-        if (Number(paddle.style.transform.split("(")[1].split("d")[0]) > 180) {
-          paddle.style.transform = "rotate(0deg)";
-          paddleDeg = 0;
-          localDegree = Number(paddleDeg) + "deg";
-        }
       }
       
       function moveBallLoop() {
@@ -109,8 +104,18 @@
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 150
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
             ///bounce off-screen algorithm
-            bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
-            bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 20;
+            if (Number(paddle.style.transform.split("(")[1].split("d")[0]) >= 91) {
+              bEl.style.top = 900 + Number(paddle.style.transform.split("(")[1].split("d")[0]);
+            }
+            else {
+              bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
+            }
+            if (Number(paddle.style.transform.split("(")[1].split("d")[0]) >= 91) {
+              bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 20;
+            }
+            else {
+              bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 40;
+            }
             bEl.style.transition = "12s linear";
             bEl.classList.add("collided");
             bEl.classList.remove("ball");
@@ -129,4 +134,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.99-->
+<!--Version 0.100-->
