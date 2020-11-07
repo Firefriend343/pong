@@ -72,7 +72,7 @@
         console.log("game begins");
         ///3,2,1 thing
         setTimeout(function(){
-          setInterval(gamePlayLoop, Number(900 + 2500 / startDifficulty));
+          setInterval(gamePlayLoop, Number(900 + 3500 / startDifficulty));
           setInterval(moveBallLoop, Number(100 - startDifficulty * 10));
         }, 5000);
       }
@@ -99,7 +99,7 @@
       
       function moveBallLoop() {
         for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - 3) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - 10) + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) 
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 150
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
@@ -118,4 +118,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.95-->
+<!--Version 0.96-->
