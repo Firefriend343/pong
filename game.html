@@ -43,7 +43,7 @@
         paddle.style.top = "100px";
         paddle.style.left = "100px";
         paddle.style.transform = "rotate(90deg)";
-        paddle.Deg = 90;
+        paddleDeg = 90;
         localDegree = paddleDeg + "deg";
       }
       
@@ -134,19 +134,19 @@
       function deleteLoop() {
         console.log("loop executes");
         var container = $("game-container");
-        for (const El of allDivs) {
-          if (El.id != "game-container") {
-            if (El.style.top < container.style.top - 50) {
-              container.removeChild(El);
+        for (const dEl of allDivs) {
+          if (dEl.id != "game-container") {
+            if (dEl.style.top < container.style.top - 50) {
+              container.removeChild(dEl);
             }
-            if (El.style.left < container.style.left - 50) {
-              container.removeChild(El);
+            if (dEl.style.left < container.style.left - 50) {
+              container.removeChild(dEl);
             }
-            if (El.style.top > container.style.top + 800) {
-              container.removeChild(El);
+            if (dEl.style.top > container.style.top + 800) {
+              container.removeChild(dEl);
             }
-            if (El.style.left > container.style.left + 1200) {
-              container.removeChild(El);
+            if (dEl.style.left > container.style.left + 1200) {
+              container.removeChild(dEl);
             }
             else {
               return;
@@ -162,4 +162,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.108-->
+<!--Version 0.109-->
