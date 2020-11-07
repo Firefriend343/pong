@@ -90,21 +90,12 @@
         newBall.style.transition = "0.1s linear";
         container.appendChild(newBall);
         allBalls = $$('.ball');
-        console.log("loop1");
-        setTimeout(function(){
-          gamePlayLoop2();
-        }, Number(400 + 2000 / startDifficulty));
-      }
-      
-      function gamePlayLoop2() {
-        console.log("loop2");
+        console.log("loop");
         gameLoop++;
         if (Number(paddle.style.top.split("p")[0]) >= 650){
           paddle.style.top = "650px";
         }
-        setTimeout(function(){
-          gamePlayLoop();
-        }, Number(400 + 2000 / startDifficulty));
+        setInterval(gamePlayLoop(), Number(400 + 2000 / startDifficulty));
       }
       
       function moveBallLoop() {
@@ -117,25 +108,9 @@
             console.log("collision");
           }
         }
-        setTimeout(function(){
-          moveBallLoop2();
-        }, Number(timeStepSec * 100));
+        setInterval(moveBallLoop(), Number(10 - startDifficulty * 10));
       }
       
-      function moveBallLoop2() {
-        for (const bEl of allBalls) {
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - Number(1 + startDifficulty / 10 )) + "px";
-          if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) - 75 
-              && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 75
-              && Number(bEl.style.left.split("p")[0]) >= 60 && Number(bEl.style.left.split("p")[0]) <= 140) {
-            ///bounce off-screen algorithm
-            console.log("collision");
-          }
-        }
-        setTimeout(function(){
-          moveBallLoop();
-        }, Number(timeStepSec * 100));
-      }
       
       ///All opening functions
       startingDifficulty();
@@ -144,4 +119,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.90-->
+<!--Version 0.91-->
