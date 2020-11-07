@@ -29,6 +29,7 @@
       var gameLoop = 0;
       var allBalls = $$('.ball');
       var timeStepSec = 1;
+      var allDivs = document.body.querySelectorAll('div');
       
       function $ (id) {
         return document.getElementById(id);
@@ -94,6 +95,7 @@
         newBall.style.transition = Number(0.1 - startDifficulty / 100) + "s linear";
         container.appendChild(newBall);
         allBalls = $$('.ball');
+        allDivs = document.body.querySelectorAll('div');
         console.log("loop");
         gameLoop++;
         if (Number(paddle.style.top.split("p")[0]) >= 650) {
@@ -132,7 +134,7 @@
       function deleteLoop() {
         console.log("loop executes");
         var container = $("game-container");
-        for (const El of document.body.querySelectorAll('div')) {
+        for (const El of allDivs) {
           if (El.id != "game-container") {
             if (El.style.top < container.style.top - 50) {
               container.removeChild(El);
@@ -160,4 +162,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.107-->
+<!--Version 0.108-->
