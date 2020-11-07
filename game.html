@@ -70,12 +70,10 @@
       
       function startGame() {
         console.log("game begins");
-        setInterval(gamePlayLoop(), Number(400 + 2000 / startDifficulty));
-        setInterval(moveBallLoop(), Number(10 - startDifficulty * 10));
         ///3,2,1 thing
         setTimeout(function(){
-          gamePlayLoop();
-          moveBallLoop();
+          setInterval(gamePlayLoop, Number(400 + 2000 / startDifficulty));
+          setInterval(moveBallLoop, Number(10 - startDifficulty * 10));
         }, 5000);
       }
       
@@ -120,4 +118,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.92-->
+<!--Version 0.93-->
