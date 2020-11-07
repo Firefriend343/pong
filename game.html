@@ -70,6 +70,8 @@
       
       function startGame() {
         console.log("game begins");
+        setInterval(gamePlayLoop(), Number(400 + 2000 / startDifficulty));
+        setInterval(moveBallLoop(), Number(10 - startDifficulty * 10));
         ///3,2,1 thing
         setTimeout(function(){
           gamePlayLoop();
@@ -95,7 +97,6 @@
         if (Number(paddle.style.top.split("p")[0]) >= 650){
           paddle.style.top = "650px";
         }
-        setInterval(gamePlayLoop(), Number(400 + 2000 / startDifficulty));
       }
       
       function moveBallLoop() {
@@ -108,7 +109,6 @@
             console.log("collision");
           }
         }
-        setInterval(moveBallLoop(), Number(10 - startDifficulty * 10));
       }
       
       
@@ -116,7 +116,8 @@
       startingDifficulty();
       startGame();
       
+      
     </script>
   </body>
 </html>
-<!--Version 0.91-->
+<!--Version 0.92-->
