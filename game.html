@@ -106,6 +106,7 @@
       function moveBallLoop() {
         allBalls = $$('.ball');
         for (const bEl of allBalls) {
+          allBalls = $$('.ball');
           bEl.style.left = Number(bEl.style.left.split("p")[0] - 10) + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) 
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 150
@@ -130,7 +131,7 @@
             bEl.classList.remove("ball");
             setTimeout(function(){
               deleteBall(bEl);
-            }, 10000 - deleteTimestamp * 2);
+            }, 9000);
             ///end
             console.log("collision");
           }
@@ -171,4 +172,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.127-->
+<!--Version 0.128-->
