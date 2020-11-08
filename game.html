@@ -49,22 +49,22 @@
       
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
-        if (e.code == 68) {
+        if (e.code == "KeyA") {
           paddleDeg = Math.min(135, Number(paddleDeg + 5));
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-right");
         }
-        else if (e.code == 65) {
+        else if (e.code == "KeyD") {
           paddleDeg = Math.max(45, Number(paddleDeg - 5));
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-left");
         }
-        else if (e.code == 87) {
+        else if (e.code == "KeyW") {
           paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) - 15 - startDifficulty / 1.5) + "px";
         }
-        else if (e.code == 83) {
+        else if (e.code == "KeyS") {
           paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) + 15 + startDifficulty / 1.5) + "px";
         }
         else {
@@ -170,4 +170,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.125-->
+<!--Version 0.126-->
