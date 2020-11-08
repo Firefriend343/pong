@@ -108,7 +108,7 @@
         for (const bEl of allBalls) {
           allBalls = $$('.ball');
           bEl.style.left = Number(bEl.style.left.split("p")[0] - 10) + "px";
-          if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0] - 50) 
+          if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) - 50
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 100
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
             ///bounce off-screen algorithm
@@ -172,4 +172,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.127-->
+<!--Version 0.128-->
