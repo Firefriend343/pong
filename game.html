@@ -138,16 +138,16 @@
         for (const dEl of allImgs) {
           if (dEl.id != "game-container") {
             if (Number(dEl.style.top.split("p")[0]) < Number(container.style.top.split("p")[0]) - 50) {
-              container.removeChild(dEl);
+              dEl.parentNode.removeChild(dEl);
             }
             if (Number(dEl.style.left.split("p")[0]) < Number(container.style.left.split("p")[0]) - 50) {
-              container.removeChild(dEl);
+              dEl.parentNode.removeChild(dEl);
             }
             if (Number(dEl.style.top.split("p")[0]) > Number(container.style.top.split("p")[0]) + 800) {
-              container.removeChild(dEl);
+              dEl.parentNode.removeChild(dEl);
             }
             if (Number(dEl.style.left.split("p")[0]) > Number(container.style.left.split("p")[0]) + 1250) {
-              container.parentNode.removeChild(dEl);
+              dEl.parentNode.removeChild(dEl);
             }
           }
         }
@@ -160,4 +160,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.117-->
+<!--Version 0.118-->
