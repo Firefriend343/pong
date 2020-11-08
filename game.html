@@ -135,6 +135,7 @@
         allImgs = document.body.querySelectorAll('img');
         console.log("loop executes");
         var container = $("game-container");
+        var ballContainer = $("ball-container");
         for (const dEl of allImgs) {
           if (dEl.id != "game-container") {
             if (Number(dEl.style.top.split("p")[0]) < Number(container.style.top.split("p")[0]) - 50) {
@@ -147,7 +148,7 @@
               container.removeChild(dEl);
             }
             if (Number(dEl.style.left.split("p")[0]) > Number(container.style.left.split("p")[0]) + 1250) {
-              container.removeChild(dEl);
+              ballContainer.removeChild(dEl);
             }
           }
         }
@@ -160,4 +161,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.115-->
+<!--Version 0.116-->
