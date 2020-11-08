@@ -78,7 +78,7 @@
         ///3,2,1 thing
         setTimeout(function(){
           setInterval(gamePlayLoop, Number(900 + 3500 / startDifficulty));
-          setInterval(moveBallLoop, Number(100 - startDifficulty * 10));
+          setInterval(moveBallLoop, Number(50 - startDifficulty * 5));
         }, 5000);
       }
       
@@ -92,7 +92,7 @@
         newBall.style.top = randomTop + "px";
         newBall.style.left = "1200px";
         newBall.src = ball.src;
-        newBall.style.transition = Number(0.1 - startDifficulty / 100) + "s linear";
+        newBall.style.transition = Number(0.05 - startDifficulty / 1000 * 5) + "s linear";
         container.appendChild(newBall);
         allBalls = $$('.ball');
         allDivs = document.body.querySelectorAll('div');
@@ -107,7 +107,7 @@
         allBalls = $$('.ball');
         for (const bEl of allBalls) {
           allBalls = $$('.ball');
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - 10) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - 5) + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) - 70
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 80
               && Number(bEl.style.left.split("p")[0]) >= 130 && Number(bEl.style.left.split("p")[0]) <= 140) {
@@ -175,4 +175,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.130-->
+<!--Version 0.132-->
