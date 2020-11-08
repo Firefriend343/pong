@@ -137,7 +137,7 @@
         console.log("loop executes");
         var container = $("game-container");
         for (const dEl of allImgs) {
-          if (dEl.id != "game-container") {
+          if (dEl.id != "ball") {
             if (Number(dEl.style.top.split("p")[0]) < Number(container.style.top.split("p")[0]) - 50) {
               dEl.parentNode.removeChild(dEl);
             }
@@ -161,4 +161,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.119-->
+<!--Version 0.120-->
