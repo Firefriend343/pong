@@ -6,7 +6,7 @@
       body { background:darkgray; }
       img { position:absolute; image-rendering:pixelated; transform-origin: 50% 50%; }
       div { position:absolute; }
-      #game-container { top:0px; left:0px; width:1350px; height:800px; display:block; border:5px solid black;}
+      #game-container { top:0px; left:0px; width:1250px; height:800px; display:block; border:5px solid black;}
       #paddle { top:100px; left:100px; width:150px; height:40px; border-radius:5px; transition:0.12s; }
       #paddle-container { }
       #ball-container { display:none; }
@@ -90,7 +90,7 @@
         newBall.style.display = "block";
         var randomTop = Number(Math.floor(Math.random() * 600 + 100));
         newBall.style.top = randomTop + "px";
-        newBall.style.left = "1250px";
+        newBall.style.left = "1200px";
         newBall.src = ball.src;
         newBall.style.transition = Number(0.1 - startDifficulty / 100) + "s linear";
         container.appendChild(newBall);
@@ -146,7 +146,7 @@
             if (dEl.style.top > container.style.top + 800) {
               container.removeChild(dEl);
             }
-            if (dEl.style.left > container.style.left + 1350) {
+            if (dEl.style.left > container.style.left + 1250) {
               container.removeChild(dEl);
             }
           }
@@ -160,4 +160,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.112-->
+<!--Version 0.114-->
