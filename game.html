@@ -137,16 +137,16 @@
         var container = $("game-container");
         for (const dEl of allImgs) {
           if (dEl.id != "game-container") {
-            if (dEl.style.top < container.style.top - 50) {
+            if (Number(dEl.style.top.split("p")[0]) < Number(container.style.top.split("p")[0]) - 50) {
               container.removeChild(dEl);
             }
-            if (dEl.style.left < container.style.left - 50) {
+            if (Number(dEl.style.left.split("p")[0]) < Number(container.style.left.split("p")[0]) - 50) {
               container.removeChild(dEl);
             }
-            if (dEl.style.top > container.style.top + 800) {
+            if (Number(dEl.style.top.split("p")[0]) > Number(container.style.top.split("p")[0]) + 800) {
               container.removeChild(dEl);
             }
-            if (dEl.style.left > container.style.left + 1250) {
+            if (Number(dEl.style.left.split("p")[0]) > Number(container.style.left.split("p")[0]) + 1250) {
               container.removeChild(dEl);
             }
           }
@@ -160,4 +160,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.114-->
+<!--Version 0.115-->
