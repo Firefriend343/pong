@@ -49,13 +49,13 @@
       
       document.addEventListener('keydown', idKey);   
       function idKey(e) {
-        if (e.code == "KeyA") {
+        if (e.code == "KeyD") {
           paddleDeg = Math.min(135, Number(paddleDeg + 5));
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
           console.log("turn-right");
         }
-        else if (e.code == "KeyD") {
+        else if (e.code == "KeyA") {
           paddleDeg = Math.max(45, Number(paddleDeg - 5));
           localDegree = paddleDeg + "deg";
           paddle.style.transform = "rotate(" + localDegree + ")";         
@@ -117,6 +117,7 @@
             }
             else {
               bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
+              var deleteTimestamp = Number(bEl.style.top = 10 + Number(paddle.style.transform.split("(")[1].split("d")[0]));
             }
             if (Number(paddle.style.transform.split("(")[1].split("d")[0]) >= 91) {
               bEl.style.left = 1200 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 5;
@@ -141,27 +142,27 @@
         console.log("ball removed");
       }
       
-      function deleteLoop() {
-        allImgs = document.body.querySelectorAll('img');
-        console.log("loop executes");
-        var container = $("game-container");
-        for (const dEl of allImgs) {
-          if (dEl.id != "ball") {
-            if (Number(dEl.style.top.split("p")[0]) < Number(container.style.top.split("p")[0]) - 50) {
-              dEl.parentNode.removeChild(dEl);
-            }
-            if (Number(dEl.style.left.split("p")[0]) < Number(container.style.left.split("p")[0]) - 50) {
-              dEl.parentNode.removeChild(dEl);
-            }
-            if (Number(dEl.style.top.split("p")[0]) > Number(container.style.top.split("p")[0]) + 800) {
-              dEl.parentNode.removeChild(dEl);
-            }
-            if (Number(dEl.style.left.split("p")[0]) > Number(container.style.left.split("p")[0]) + 1250) {
-              dEl.parentNode.removeChild(dEl);
-            }
-          }
-        }
-      }
+      ///function deleteLoop() {
+        ///allImgs = document.body.querySelectorAll('img');
+        ///console.log("loop executes");
+        ///var container = $("game-container");
+        ///for (const dEl of allImgs) {
+          ///if (dEl.id != "ball") {
+            ///if (Number(dEl.style.top.split("p")[0]) < Number(container.style.top.split("p")[0]) - 50) {
+              ///dEl.parentNode.removeChild(dEl);
+            ///}
+            ///if (Number(dEl.style.left.split("p")[0]) < Number(container.style.left.split("p")[0]) - 50) {
+              ///dEl.parentNode.removeChild(dEl);
+            ///}
+            ///if (Number(dEl.style.top.split("p")[0]) > Number(container.style.top.split("p")[0]) + 800) {
+              ///dEl.parentNode.removeChild(dEl);
+            ///}
+            ///if (Number(dEl.style.left.split("p")[0]) > Number(container.style.left.split("p")[0]) + 1250) {
+              ///dEl.parentNode.removeChild(dEl);
+            ///}
+          ///}
+        ///}
+      ///}
       
       ///All opening functions
       startingDifficulty();
@@ -170,4 +171,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.126-->
+<!--Version 0.127-->
