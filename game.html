@@ -6,7 +6,7 @@
       body { background:darkgray; }
       img { position:absolute; image-rendering:pixelated; transform-origin: 50% 50%; }
       div { position:absolute; }
-      #game-container { top:0px; left:0px; width:1200px; height:800px; display:block; border:5px solid black;}
+      #game-container { top:0px; left:0px; width:1350px; height:800px; display:block; border:5px solid black;}
       #paddle { top:100px; left:100px; width:150px; height:40px; border-radius:5px; transition:0.12s; }
       #paddle-container { }
       #ball-container { display:none; }
@@ -146,7 +146,7 @@
             if (dEl.style.top > container.style.top + 800) {
               container.removeChild(dEl);
             }
-            if (dEl.style.left > container.style.left + 1200) {
+            if (dEl.style.left > container.style.left + 1350) {
               container.removeChild(dEl);
             }
           }
@@ -160,4 +160,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.111-->
+<!--Version 0.112-->
