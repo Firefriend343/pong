@@ -29,7 +29,7 @@
       var gameLoop = 0;
       var allBalls = $$('.ball');
       var timeStepSec = 1;
-      var allDivs = document.body.querySelectorAll('div');
+      var allImgs = document.body.querySelectorAll('img');
       
       function $ (id) {
         return document.getElementById(id);
@@ -132,10 +132,10 @@
       }
       
       function deleteLoop() {
-        allDivs = document.body.querySelectorAll('div');
+        allImgs = document.body.querySelectorAll('img');
         console.log("loop executes");
         var container = $("game-container");
-        for (const dEl of allDivs) {
+        for (const dEl of allImgs) {
           if (dEl.id != "game-container") {
             if (dEl.style.top < container.style.top - 50) {
               container.removeChild(dEl);
@@ -160,4 +160,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.110-->
+<!--Version 0.111-->
