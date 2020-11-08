@@ -74,7 +74,7 @@
       
       function startGame() {
         console.log("game begins");
-        setInterval(deleteLoop, 10);
+        ///setInterval(deleteLoop, 10);
         ///3,2,1 thing
         setTimeout(function(){
           setInterval(gamePlayLoop, Number(900 + 3500 / startDifficulty));
@@ -112,7 +112,7 @@
               && Number(bEl.style.left.split("p")[0]) >= 100 && Number(bEl.style.left.split("p")[0]) <= 140) {
             ///bounce off-screen algorithm
             if (Number(paddle.style.transform.split("(")[1].split("d")[0]) >= 91) {
-              bEl.style.top = 900 + Number(paddle.style.transform.split("(")[1].split("d")[0]);
+              bEl.style.top = 860 + Number(paddle.style.transform.split("(")[1].split("d")[0]);
             }
             else {
               bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
@@ -126,10 +126,18 @@
             bEl.style.transition = "12s linear";
             bEl.classList.add("collided");
             bEl.classList.remove("ball");
+            setTimeout(function(){
+              deleteBall(bEl);
+            }, 10000);
             ///end
             console.log("collision");
           }
         }
+      }
+      
+      function deleteBall(bEl) {
+        bEl.parentNode.removeChild(bEl);
+        console.log("ball removed");
       }
       
       function deleteLoop() {
@@ -161,4 +169,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.120-->
+<!--Version 0.121-->
