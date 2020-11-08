@@ -113,6 +113,7 @@
             ///bounce off-screen algorithm
             if (Number(paddle.style.transform.split("(")[1].split("d")[0]) >= 91) {
               bEl.style.top = 860 + Number(paddle.style.transform.split("(")[1].split("d")[0]);
+              var deleteTimestamp = Number(bEl.style.top = 860 + Number(paddle.style.transform.split("(")[1].split("d")[0]));
             }
             else {
               bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
@@ -128,7 +129,7 @@
             bEl.classList.remove("ball");
             setTimeout(function(){
               deleteBall(bEl);
-            }, 10000);
+            }, 10000 - deleteTimestamp * 2);
             ///end
             console.log("collision");
           }
@@ -169,4 +170,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.122-->
+<!--Version 0.123-->
