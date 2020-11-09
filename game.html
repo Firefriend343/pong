@@ -13,7 +13,7 @@
       #ball { top:100px; left:300px; height:49px; width:49px; border-radius:50%; }
       .ball {  }
       #timerDisplay { border-radius:10%; background:slateblue; color:white; font-family:'MedievalSharp', cursive; width:100px; height:100px; 
-        margin:20px; font-size:300%; position:fixed; display:block; top:30px; left:1000px; }
+        margin:20px; padding:10px; font-size:300%; position:fixed; display:block; top:30px; left:1000px; }
       #timerText {  }
     </style>
   </head>
@@ -80,9 +80,9 @@
         console.log("game begins");
         ///3,2,1 thing
         var intervalID = setInterval(timeSetLoop, 1000);
+        var i = 0;
         function timeSetLoop() {
           timerText.innerText = Number(timerText.innerText) - 1;
-          var i = 0;
           if (i === 5) {
             clearInterval(intervalID);
             console.log("timer finished");
@@ -170,4 +170,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.137-->
+<!--Version 0.138-->
