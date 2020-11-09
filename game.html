@@ -71,6 +71,9 @@
         else if (e.code == "KeyS") {
           paddle.style.top = Number(Number(paddle.style.top.split("p")[0]) + 15 + startDifficulty / 1.5) + "px";
         }
+        else if (e.code == "ArrowUp") {
+          alert("Use WASD to control the paddle.");
+        }
         else {
           console.log("wrong key");
         }
@@ -172,4 +175,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.144-->
+<!--Version 0.145-->
