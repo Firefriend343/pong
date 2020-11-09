@@ -86,6 +86,8 @@
           if (i === 5) {
             clearInterval(intervalID);
             console.log("timer finished");
+            var display = $("timerDisplay");
+            display.parentNode.removeChild(display);
           }
           else {
             console.log("timer executed");
@@ -170,4 +172,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.140-->
+<!--Version 0.141-->
