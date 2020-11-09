@@ -12,6 +12,9 @@
       #ball-container { display:none; }
       #ball { top:100px; left:300px; height:49px; width:49px; border-radius:50%; }
       .ball {  }
+      #timerDisplay { border-radius:10%; background:slateblue; color:white; font-family:'MedievalSharp', cursive; width:100px; height:100px; margin:1px; font-size:80%; 
+                      position:fixed; display:block; top:30px; left:1000px; }
+      #timerText {  }
     </style>
   </head>
   <body>
@@ -19,6 +22,7 @@
     <div id="game-container">
       <div id="paddle-container"><img id="paddle" src="pong-paddle.png"></img></div>
       <div id="ball-container"><img class="ball" id="ball" src="pong-ball.png"></img></div>
+      <div id="timerDisplay"><span id="timerText"> 6 </span></div>
     </div>
   
     <script>
@@ -74,12 +78,24 @@
       
       function startGame() {
         console.log("game begins");
-        ///setInterval(deleteLoop, 10);
         ///3,2,1 thing
+        var intervalID = setInterval(function() {
+          
+          if (i === 5) {
+            clearInterval(intervalID);
+            ("timer finished");
+          }
+          console.log("timer executed");
+          i++;
+          timeSetLoop, 1000);
         setTimeout(function(){
           setInterval(gamePlayLoop, Number(900 + 3500 / startDifficulty));
           setInterval(moveBallLoop, Number(50 - startDifficulty * 5));
         }, 5000);
+      }
+      
+      function timeSetLoop() {
+        timerText.innerText = Number(timerText.innerText) - 1;
       }
       
       function gamePlayLoop() {
@@ -154,4 +170,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.134-->
+<!--Version 0.135-->
