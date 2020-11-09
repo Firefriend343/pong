@@ -135,7 +135,7 @@
               var deleteTimestamp = Number(bEl.style.top = 860 + Number(paddle.style.transform.split("(")[1].split("d")[0]));
             }
             else {
-              bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]);
+              bEl.style.top = -10 - Number(paddle.style.transform.split("(")[1].split("d")[0]) * 2;
               var deleteTimestamp = Number(bEl.style.top = 10 + Number(paddle.style.transform.split("(")[1].split("d")[0]));
             }
             if (Number(paddle.style.transform.split("(")[1].split("d")[0]) >= 91) {
@@ -172,4 +172,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.141-->
+<!--Version 0.142-->
