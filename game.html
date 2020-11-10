@@ -14,7 +14,10 @@
       .ball {  }
       #timerDisplay { border-radius:10%; background:lightblue; color:black; font-family:'MedievalSharp', cursive; width:100px; height:100px; 
         margin:20px; font-size:300%; position:fixed; display:block; top:30px; left:1000px; }
+       #scoreDisplay { border-radius:10%; background:lightblue; color:black; font-family:'MedievalSharp', cursive; width:80px; height:40px; 
+        margin:10px; font-size:150%; position:fixed; display:block; top:30px; left:200px; }
       #timerText { margin:30px; margin-top:20px; }
+      #scoreText
     </style>
   </head>
   <body>
@@ -23,6 +26,7 @@
       <div id="paddle-container"><img id="paddle" src="pong-paddle.png"></img></div>
       <div id="ball-container"><img class="ball" id="ball" src="pong-ball.png"></img></div>
       <div id="timerDisplay"><span id="timerText"> 6 </span></div>
+      <div id="scoreDisplay"><span id="scoreText"> 1 </span></div>
     </div>
   
     <script>
@@ -154,16 +158,22 @@
             bEl.classList.add("collided");
             bEl.classList.remove("ball");
             setTimeout(function(){
+              bEl.style.width = "0px";
+              bEl.style.height = "0px";
               deleteBall(bEl);
             }, 9000);
             ///end
             console.log("collision");
+          }
+          if (Number(scoreText.innerText) >= 20) {
+            alert("You have won the game. Thank you for playing!");
           }
         }
       }
       
       function deleteBall(bEl) {
         bEl.parentNode.removeChild(bEl);
+        scoreText.innerText = Number(scoreText) + 1;
         console.log("ball removed");
       }
       
@@ -175,4 +185,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.145-->
+<!--Version 0.146-->
