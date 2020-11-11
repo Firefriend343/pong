@@ -38,6 +38,7 @@
       var allBalls = $$('.ball');
       var timeStepSec = 1;
       var allImgs = document.body.querySelectorAll('img');
+      var win = false;
       
       function $ (id) {
         return document.getElementById(id);
@@ -165,8 +166,9 @@
             ///end
             console.log("collision");
           }
-          if (Number(scoreText.innerText) >= 20) {
+          if (Number(scoreText.innerText) >= 30 && win == false) {
             alert("You have won the game. Thank you for playing!");
+            win = true;
           }
         }
       }
@@ -185,4 +187,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.148-->
+<!--Version 0.149-->
