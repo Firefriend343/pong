@@ -17,7 +17,7 @@
        #scoreDisplay { border-radius:10%; background:lightblue; color:black; font-family:'MedievalSharp', cursive; width:80px; height:40px; 
         margin:10px; font-size:150%; position:fixed; display:block; top:30px; left:200px; }
       #timerText { margin:30px; margin-top:20px; }
-      #scoreText
+      #scoreText { margin:30px; }
     </style>
   </head>
   <body>
@@ -132,7 +132,7 @@
         allBalls = $$('.ball');
         for (const bEl of allBalls) {
           allBalls = $$('.ball');
-          bEl.style.left = Number(bEl.style.left.split("p")[0] - 5) + "px";
+          bEl.style.left = Number(bEl.style.left.split("p")[0] - 4) + "px";
           if (Number(bEl.style.top.split("p")[0]) >= Number(paddle.style.top.split("p")[0]) - 75
               && Number(bEl.style.top.split("p")[0]) <= Number(paddle.style.top.split("p")[0]) + 75
               && Number(bEl.style.left.split("p")[0]) >= 130 && Number(bEl.style.left.split("p")[0]) <= 140) {
@@ -173,7 +173,7 @@
       
       function deleteBall(bEl) {
         bEl.parentNode.removeChild(bEl);
-        scoreText.innerText = Number(scoreText) + 1;
+        scoreText.innerText = Number(scoreText.innerText) + 1;
         console.log("ball removed");
       }
       
@@ -185,4 +185,4 @@
     </script>
   </body>
 </html>
-<!--Version 0.146-->
+<!--Version 0.147-->
