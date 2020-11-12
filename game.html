@@ -169,6 +169,8 @@
           if (Number(scoreText.innerText) >= 30 && win == false) {
             alert("You have won the game. Thank you for playing!");
             win = true;
+            var gameContainer = $("game-container");
+            gameContainer.parentNode.removeChild(gameContainer);
           }
         }
       }
